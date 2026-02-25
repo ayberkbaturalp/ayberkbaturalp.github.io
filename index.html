@@ -5,246 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayberk Baturalp | Portfolio</title>
     <style>
-        /* Modern CSS Başlangıcı */
-        :root {
-            --primary: #00d2ff;
-            --secondary: #3a7bd5;
-            --bg: #0f0c29;
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --text: #e0e0e0;
-        }
-
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: sans-serif;
+            background-color: #1a1a1a; /* Koyu Arka Plan */
+            color: #f0f0f0; /* Açık Yazı Rengi */
             margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
-            color: var(--text);
+            padding: 20px;
             line-height: 1.6;
-        }
-
-        /* Header Tasarımı */
-        header {
             text-align: center;
-            padding: 4rem 1rem;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            background: -webkit-linear-gradient(var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: #bbb;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Butonlar */
-        .btn-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 10px 20px;
-            background: rgba(255,255,255,0.1);
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-
-        .btn:hover {
-            background: var(--primary);
-            color: #000;
-            transform: translateY(-2px);
-        }
-
-        .btn svg {
-            margin-right: 8px;
-            fill: currentColor;
-            width: 20px;
-            height: 20px;
-        }
-
-        /* İçerik Kutuları */
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .section {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            margin-bottom: 2rem;
+            max-width: 700px;
+            margin: auto;
+            background: #2d2d2d;
+            padding: 30px;
             border-radius: 15px;
-            border: 1px solid rgba(255,255,255,0.05);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
-
+        h1 {
+            color: #4facfe; /* Mavi Başlık */
+            margin-bottom: 5px;
+        }
         h2 {
-            color: var(--primary);
-            border-left: 4px solid var(--secondary);
-            padding-left: 15px;
-            margin-top: 0;
+            border-bottom: 2px solid #4facfe;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-top: 30px;
         }
-
-        /* Deneyim Listesi */
-        .experience-item {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+        p {
+            color: #cccccc;
         }
-        
-        .experience-item:last-child {
-            border-bottom: none;
-        }
-
-        .role {
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #fff;
-        }
-
-        .company {
-            color: var(--primary);
-            font-size: 0.9rem;
-        }
-
-        .date {
-            font-size: 0.85rem;
-            color: #888;
-            font-style: italic;
-        }
-
-        /* Yetenek Etiketleri */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-tag {
-            background: rgba(0, 210, 255, 0.15);
-            color: #00d2ff;
-            padding: 5px 15px;
+        .btn {
+            display: inline-block;
+            background: #4facfe;
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
             border-radius: 5px;
-            font-size: 0.9rem;
-            border: 1px solid rgba(0, 210, 255, 0.3);
+            margin: 10px;
+            font-weight: bold;
         }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #666;
-            font-size: 0.9rem;
+        .btn:hover {
+            background: #fff;
         }
-
-        /* Mobil Uyum */
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .container { padding: 1rem; }
+        ul {
+            text-align: left;
+            list-style-type: none; /* Noktaları kaldırdık */
+            padding: 0;
+        }
+        li {
+            background: #383838;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .tag {
+            background: #004e92;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-right: 5px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Ayberk Baturalp</h1>
-        <div class="subtitle">Electrical & Electronics Engineering Student | Haliç University</div>
-        <div class="subtitle">Teknofest Haliç Board Member • Robotics Enthusiast</div>
-        
-        <div class="btn-container">
-            <a href="https://www.linkedin.com/in/ayberk-baturalp-52aa18356/" class="btn" target="_blank">
-                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                LinkedIn
-            </a>
-            <a href="mailto:ayberkbaturalp@gmail.com" class="btn">
-                <svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
-                Email Me
-            </a>
-        </div>
-    </header>
-
     <div class="container">
+        <h1>Ayberk Baturalp</h1>
+        <p>⚡ Electrical & Electronics Engineering Student | 🤖 Robotics Enthusiast</p>
         
-        <div class="section">
-            <h2>About Me</h2>
-            <p>
-                Hello! [cite_start]I am a second-year student at <strong>Haliç University [cite: 5][cite_start]</strong>, passionate about Robotics and Autonomous Systems[cite: 7]. 
-                I combine my technical engineering skills with business analysis discipline to create innovative AI-powered solutions.
-            </p>
-        </div>
+        <br>
+        <a href="https://www.linkedin.com/in/ayberk-baturalp-52aa18356/" class="btn">🔗 LinkedIn Profilim</a>
+        <a href="mailto:ayberkbaturalp@gmail.com" class="btn">✉️ Bana Ulaş</a>
 
-        <div class="section">
-            <h2>Professional Experience</h2>
-            
-            <div class="experience-item">
-                <div class="role">Board Member</div>
-                <div class="company">Teknofest Haliç</div>
-                [cite_start]<div class="date">Feb 2026 - Present [cite: 10, 11]</div>
-                [cite_start]<p>Coordinating project teams and managing development processes within the community[cite: 6, 13].</p>
-            </div>
+        <hr style="border-color: #444; margin-top: 20px;">
 
-            <div class="experience-item">
-                <div class="role">Business Analyst</div>
-                <div class="company">Haliç University (Digital Transformation Office)</div>
-                [cite_start]<div class="date">Oct 2025 - Dec 2025 [cite: 14, 15]</div>
-                [cite_start]<p>Analyzed business processes and migrated workflows to digital platforms[cite: 16].</p>
-            </div>
+        <h2>👨‍💻 Hakkımda</h2>
+        <p>
+            Merhaba! Ben Haliç Üniversitesi'nde okuyan bir mühendislik öğrencisiyim. 
+            Mühendislik disiplinimi iş analizi yeteneklerimle birleştirerek, yapay zeka destekli otonom projeler geliştiriyorum.
+        </p>
 
-            <div class="experience-item">
-                <div class="role">Team Member</div>
-                <div class="company">Haliç CODE</div>
-                [cite_start]<div class="date">Sep 2025 - Feb 2026 [cite: 18, 19]</div>
-                [cite_start]<p>Organized technical events and workshops for the community[cite: 20].</p>
-            </div>
-        </div>
+        <h2>🚀 Deneyimler</h2>
+        <ul>
+            <li>
+                <strong>Teknofest Haliç - Board Member</strong> <br>
+                <small>Şubat 2026 - Günümüz</small> <br>
+                Proje ekiplerini koordine ediyorum.
+            </li>
+            <li>
+                <strong>Haliç Üniversitesi - Business Analyst</strong> <br>
+                <small>Ekim 2025 - Aralık 2025</small> <br>
+                Dijital Dönüşüm Ofisi'nde iş süreçlerini analiz ettim.
+            </li>
+            <li>
+                <strong>Haliç CODE - Team Member</strong> <br>
+                <small>Eylül 2025 - Şubat 2026</small> <br>
+                Teknik etkinlikler ve atölyeler düzenledim.
+            </li>
+        </ul>
 
-        <div class="section">
-            <h2>Skills & Technologies</h2>
-            <div class="skills-grid">
-                <span class="skill-tag">C++</span>
-                <span class="skill-tag">Python</span>
-                [cite_start]<span class="skill-tag">Arduino [cite: 26]</span>
-                [cite_start]<span class="skill-tag">Robotics [cite: 24]</span>
-                [cite_start]<span class="skill-tag">Electronics [cite: 27]</span>
-                [cite_start]<span class="skill-tag">3D Printing [cite: 27]</span>
-                [cite_start]<span class="skill-tag">Business Analysis [cite: 23]</span>
-                [cite_start]<span class="skill-tag">Project Management [cite: 25]</span>
-            </div>
-        </div>
+        <h2>🛠 Yetenekler</h2>
+        <p>
+            <span class="tag">C++</span>
+            <span class="tag">Python</span>
+            <span class="tag">Arduino</span>
+            <span class="tag">Robotics</span>
+            <span class="tag">Electronics</span>
+            <span class="tag">3D Printing</span>
+            <span class="tag">Business Analysis</span>
+        </p>
 
-        <div class="section">
-            <h2>Certifications</h2>
-            <ul style="padding-left: 20px; color: #ccc;">
-                [cite_start]<li>Introduction to Basic Electronics & Robotics - BTK Academy [cite: 33]</li>
-                [cite_start]<li>Arduino Programming with Tinkercad - BTK Academy [cite: 33]</li>
-                [cite_start]<li>Robotic Coding Trainer Education - Istanbul University [cite: 33]</li>
-                [cite_start]<li>Career & Development Week - Ford Otosan [cite: 33]</li>
-                [cite_start]<li>Software and Technology School - Coderspace [cite: 33]</li>
-            </ul>
-        </div>
+        <h2>🎓 Eğitim & Sertifikalar</h2>
+        <ul>
+            <li>🎓 <strong>Haliç Üniversitesi</strong> - Elektrik Elektronik Müh.</li>
+            <li>📜 Temel Elektronik & Robotik (BTK Akademi)</li>
+            <li>📜 Arduino Programlama (BTK Akademi)</li>
+            <li>📜 Robotik Kodlama Eğitmen Eğitimi (İstanbul Üni)</li>
+        </ul>
 
+        <br><br>
+        <small>© 2026 Ayberk Baturalp</small>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Ayberk Baturalp. All rights reserved.</p>
-    </footer>
 
 </body>
 </html>
