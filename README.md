@@ -1,1 +1,0 @@
-# ayberkbaturalp.github.io
