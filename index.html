@@ -4,94 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayberk Baturalp | Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Genel Ayarlar */
+        /* Modern CSS Başlangıcı */
+        :root {
+            --primary: #00d2ff;
+            --secondary: #3a7bd5;
+            --bg: #0f0c29;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text: #e0e0e0;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: #e0e0e0;
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            color: var(--text);
             line-height: 1.6;
         }
+
+        /* Header Tasarımı */
         header {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: white;
-            padding: 4rem 2rem;
             text-align: center;
+            padding: 4rem 1rem;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        header h1 {
-            margin: 0;
-            font-size: 3rem;
-            font-weight: 700;
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: -webkit-linear-gradient(var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.8;
-            margin-top: 10px;
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #bbb;
+            margin-bottom: 1.5rem;
         }
+
+        /* Butonlar */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        .btn svg {
+            margin-right: 8px;
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* İçerik Kutuları */
         .container {
-            max-width: 900px;
-            margin: auto;
+            max-width: 800px;
+            margin: 0 auto;
             padding: 2rem;
         }
+
         .section {
-            background: #1e1e1e;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
             padding: 2rem;
             margin-bottom: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
+
         h2 {
-            color: #4facfe;
-            border-bottom: 2px solid #4facfe;
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-        .skill-tag {
-            display: inline-block;
-            background: #333;
-            color: #4facfe;
-            padding: 5px 15px;
-            margin: 5px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            border: 1px solid #4facfe;
-        }
-        .job-card {
-            border-left: 4px solid #4facfe;
+            color: var(--primary);
+            border-left: 4px solid var(--secondary);
             padding-left: 15px;
-            margin-bottom: 20px;
+            margin-top: 0;
         }
-        .job-card h3 {
-            margin: 0;
+
+        /* Deneyim Listesi */
+        .experience-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .role {
+            font-weight: bold;
+            font-size: 1.1rem;
             color: #fff;
         }
-        .job-card span {
+
+        .company {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .date {
             font-size: 0.85rem;
-            color: #aaa;
+            color: #888;
+            font-style: italic;
         }
-        .btn {
-            display: inline-block;
-            background: #4facfe;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
+
+        /* Yetenek Etiketleri */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: rgba(0, 210, 255, 0.15);
+            color: #00d2ff;
+            padding: 5px 15px;
             border-radius: 5px;
-            margin-top: 10px;
-            font-weight: bold;
-            transition: 0.3s;
+            font-size: 0.9rem;
+            border: 1px solid rgba(0, 210, 255, 0.3);
         }
-        .btn:hover {
-            background: #00f2fe;
-            color: #121212;
-        }
+
         footer {
             text-align: center;
-            padding: 20px;
-            color: #777;
+            padding: 2rem;
+            color: #666;
             font-size: 0.9rem;
+        }
+
+        /* Mobil Uyum */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 1rem; }
         }
     </style>
 </head>
@@ -99,30 +165,63 @@
 
     <header>
         <h1>Ayberk Baturalp</h1>
-        <p>Electrical & Electronics Engineering Student | Robotics Enthusiast</p>
-        <div style="margin-top: 20px;">
-            <a href="https://www.linkedin.com/in/ayberk-baturalp-52aa18356/" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="mailto:ayberkbaturalp@gmail.com" class="btn"><i class="fas fa-envelope"></i> Email</a>
+        <div class="subtitle">Electrical & Electronics Engineering Student | Haliç University</div>
+        <div class="subtitle">Teknofest Haliç Board Member • Robotics Enthusiast</div>
+        
+        <div class="btn-container">
+            <a href="https://www.linkedin.com/in/ayberk-baturalp-52aa18356/" class="btn" target="_blank">
+                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                LinkedIn
+            </a>
+            <a href="mailto:ayberkbaturalp@gmail.com" class="btn">
+                <svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+                Email Me
+            </a>
         </div>
     </header>
 
     <div class="container">
         
         <div class="section">
-            <h2><i class="fas fa-user"></i> About Me</h2>
+            <h2>About Me</h2>
             <p>
-                [cite_start]I am a second-year <strong>Electrical and Electronics Engineering</strong> student at <strong>Haliç University</strong>[cite: 5, 29]. 
-                [cite_start]I combine my engineering discipline with business analysis skills to develop <strong>AI-powered autonomous projects</strong>[cite: 7].
-                [cite_start]Currently, I act as a Board Member at the Teknofest Haliç community[cite: 10].
+                Hello! [cite_start]I am a second-year student at <strong>Haliç University [cite: 5][cite_start]</strong>, passionate about Robotics and Autonomous Systems[cite: 7]. 
+                I combine my technical engineering skills with business analysis discipline to create innovative AI-powered solutions.
             </p>
         </div>
 
         <div class="section">
-            <h2><i class="fas fa-tools"></i> Skills</h2>
-            <div>
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="role">Board Member</div>
+                <div class="company">Teknofest Haliç</div>
+                [cite_start]<div class="date">Feb 2026 - Present [cite: 10, 11]</div>
+                [cite_start]<p>Coordinating project teams and managing development processes within the community[cite: 6, 13].</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="role">Business Analyst</div>
+                <div class="company">Haliç University (Digital Transformation Office)</div>
+                [cite_start]<div class="date">Oct 2025 - Dec 2025 [cite: 14, 15]</div>
+                [cite_start]<p>Analyzed business processes and migrated workflows to digital platforms[cite: 16].</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="role">Team Member</div>
+                <div class="company">Haliç CODE</div>
+                [cite_start]<div class="date">Sep 2025 - Feb 2026 [cite: 18, 19]</div>
+                [cite_start]<p>Organized technical events and workshops for the community[cite: 20].</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Skills & Technologies</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Python</span>
+                [cite_start]<span class="skill-tag">Arduino [cite: 26]</span>
                 [cite_start]<span class="skill-tag">Robotics [cite: 24]</span>
-                <span class="skill-tag">Python & AI</span>
-                [cite_start]<span class="skill-tag">C++ / Arduino [cite: 26]</span>
                 [cite_start]<span class="skill-tag">Electronics [cite: 27]</span>
                 [cite_start]<span class="skill-tag">3D Printing [cite: 27]</span>
                 [cite_start]<span class="skill-tag">Business Analysis [cite: 23]</span>
@@ -131,33 +230,12 @@
         </div>
 
         <div class="section">
-            <h2><i class="fas fa-briefcase"></i> Experience</h2>
-            
-            <div class="job-card">
-                <h3>Teknofest Haliç Board Member</h3>
-                [cite_start]<span>Feb 2026 - Present [cite: 11]</span>
-                [cite_start]<p>Coordinating and managing project teams within the community[cite: 13].</p>
-            </div>
-
-            <div class="job-card">
-                <h3>Business Analyst</h3>
-                <span>Haliç University (Digital Transformation Office) | [cite_start]Oct 2025 - Dec 2025 [cite: 14, 15]</span>
-                [cite_start]<p>Analyzed business processes and managed the migration of workflows to digital platforms[cite: 16].</p>
-            </div>
-
-            <div class="job-card">
-                <h3>Haliç CODE Team Member</h3>
-                [cite_start]<span>Sep 2025 - Feb 2026 [cite: 18, 19]</span>
-                [cite_start]<p>Organized technical events and workshops[cite: 20].</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2><i class="fas fa-certificate"></i> Certifications</h2>
-            <ul>
+            <h2>Certifications</h2>
+            <ul style="padding-left: 20px; color: #ccc;">
                 [cite_start]<li>Introduction to Basic Electronics & Robotics - BTK Academy [cite: 33]</li>
                 [cite_start]<li>Arduino Programming with Tinkercad - BTK Academy [cite: 33]</li>
                 [cite_start]<li>Robotic Coding Trainer Education - Istanbul University [cite: 33]</li>
+                [cite_start]<li>Career & Development Week - Ford Otosan [cite: 33]</li>
                 [cite_start]<li>Software and Technology School - Coderspace [cite: 33]</li>
             </ul>
         </div>
@@ -165,7 +243,7 @@
     </div>
 
     <footer>
-        <p>© 2026 Ayberk Baturalp. All rights reserved.</p>
+        <p>&copy; 2026 Ayberk Baturalp. All rights reserved.</p>
     </footer>
 
 </body>
